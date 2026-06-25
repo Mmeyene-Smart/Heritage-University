@@ -105,7 +105,7 @@ function Hero() {
             : "opacity-0 md:translate-y-[70px] translate-y-6"
         }`}
       >
-        <div className="bg-slate-900/70 backdrop-blur-xl border border-blue-500/25 rounded-2xl p-6 sm:p-8 md:py-8 md:px-6 shadow-[0_20px_50px_rgba(0,0,0,0.6),_0_0_40px_rgba(59,130,246,0.15)] max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-x-0 md:divide-x divide-blue-500/25 text-center relative overflow-hidden group">
+        <div className="bg-slate-900 border border-blue-800/50 rounded-2xl p-6 sm:p-8 md:py-8 md:px-6 shadow-[0_20px_50px_rgba(0,0,0,0.6),_0_0_40px_rgba(59,130,246,0.15)] max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-x-0 md:divide-x divide-blue-500/25 text-center relative overflow-hidden group">
           {/* Subtle inside glow for stats container */}
           <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none"></div>
           

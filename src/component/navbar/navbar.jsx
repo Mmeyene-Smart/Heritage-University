@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../../assets/realogo.jpeg";
+import logo from "../../assets/realogo.png";
 
 const navItems = [
   "Home",
@@ -50,7 +50,7 @@ function Navbar() {
             className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] object-contain relative transition-transform duration-700 ease-out group-hover:rotate-[360deg] group-hover:scale-110" 
           />
           <span className="text-[22px] sm:text-[24px] md:text-2xl font-bold text-blue-900 tracking-wide whitespace-nowrap leading-tight">
-            Heritage <br/><span className="font-normal text-slate-650">University</span>
+           Emmanuel Ekot <br/><span className="font-normal text-slate-600">University</span>
           </span>
         </div>
 
@@ -67,7 +67,7 @@ function Navbar() {
               </li>
             ))}
             <li>
-              <button className="relative overflow-hidden bg-blue-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-[0_4px_12px_rgba(30,58,138,0.2)] hover:shadow-[0_6px_20px_rgba(245,158,11,0.35)] hover:scale-105 active:scale-95 hover:bg-amber-400 hover:text-blue-900 transition-all duration-300 whitespace-nowrap cursor-pointer">
+              <button className="relative overflow-hidden bg-[#E0D442] text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-[0_4px_12px_rgba(30,58,138,0.2)] hover:shadow-[0_6px_20px_rgba(245,158,11,0.35)] hover:scale-105 active:scale-95 hover:bg-blue-400 hover:text-blue-900 transition-all duration-300 whitespace-nowrap cursor-pointer">
                 Apply Now
               </button>
             </li>
@@ -114,7 +114,7 @@ function Navbar() {
               isOpen ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
             }`}
           >
-            <button className="bg-blue-900 text-white px-8 py-2.5 rounded-full text-sm font-semibold w-full hover:bg-amber-400 hover:text-blue-900 transition-all duration-300 shadow-[0_4px_12px_rgba(30,58,138,0.2)]">
+            <button className="bg-[#E0D442] text-white px-8 py-2.5 rounded-full text-sm font-semibold w-full hover:bg-blue-400 hover:text-amber-900 transition-all duration-300 shadow-[0_4px_12px_rgba(30,58,138,0.2)]">
               Apply Now
             </button>
           </li>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import logo from "../../assets/realogo.jpeg";
+import logo from "../../assets/realogo.png";
 
 function Footer() {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,7 +49,7 @@ function Footer() {
               className="w-[45px] h-[45px] sm:w-[50px] sm:h-[50px] object-contain" 
             />
             <span className="text-[20px] sm:text-[22px] font-bold text-white tracking-wide leading-none">
-              Heritage <br/><span className="font-normal text-slate-300 text-sm sm:text-base">University</span>
+             Emmanuel Ekot <br/><span className="font-normal text-slate-300 text-sm sm:text-base">University</span>
             </span>
           </div>
 

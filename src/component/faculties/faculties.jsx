@@ -59,11 +59,11 @@ function Faculties() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#030611] py-24 md:py-32 px-6 sm:px-10 md:px-16 lg:pl-[100px] lg:pr-10 overflow-hidden font-sans border-t border-blue-900/10"
+      className="relative w-full bg-slate-950 py-24 md:py-32 px-6 sm:px-10 md:px-16 lg:pl-[100px] lg:pr-10 overflow-hidden font-sans border-t border-slate-900"
     >
       {/* Background visual details */}
-      <div className="absolute top-10 left-[15%] w-72 h-72 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-10 right-[15%] w-72 h-72 bg-cyan-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-10 left-[15%] w-72 h-72 bg-blue-900/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-10 right-[15%] w-72 h-72 bg-amber-500/2 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
         
@@ -87,21 +87,21 @@ function Faculties() {
             <div
               key={faculty.id}
               style={{ transitionDelay: `${index * 150}ms` }}
-              className={`w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.33%-1.75rem)] min-w-[280px] bg-slate-900/50 backdrop-blur-md border border-blue-900/20 hover:border-cyan-500/40 rounded-xl p-8 flex flex-col justify-between shadow-[0_4px_30px_rgba(0,0,0,0.4)] transition-all duration-700 ease-out transform hover:-translate-y-2 hover:shadow-[0_15px_35px_rgba(6,182,212,0.15)] group relative overflow-hidden ${
+              className={`w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.33%-1.75rem)] min-w-[280px] bg-slate-900/40 backdrop-blur-md border border-slate-800/80 hover:border-amber-500/30 rounded-xl p-8 flex flex-col justify-between shadow-[0_4px_30px_rgba(0,0,0,0.3)] transition-all duration-700 ease-out transform hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(245,158,11,0.06)] group relative overflow-hidden ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}
             >
               {/* Glowing Top line border accent */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-600 to-cyan-500 shadow-[0_1px_5px_rgba(6,182,212,0.5)]"></div>
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-900 to-blue-800 shadow-[0_1px_3px_rgba(30,58,138,0.2)]"></div>
 
               {/* Glowing Corner accent */}
-              <div className="absolute top-0 right-0 w-12 h-12 bg-cyan-500/10 rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-0 right-0 w-12 h-12 bg-amber-500/5 rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300 leading-snug">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors duration-300 leading-snug">
                   {faculty.title}
                 </h3>
-                <p className="text-sm sm:text-base text-blue-200/70 leading-relaxed font-light mb-8 group-hover:text-blue-100/90 transition-colors duration-300">
+                <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-light mb-8 group-hover:text-slate-200 transition-colors duration-300">
                   {faculty.subjects}
                 </p>
               </div>
@@ -109,7 +109,7 @@ function Faculties() {
               <div>
                 <a
                   href={faculty.link}
-                  className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold text-sm tracking-wider transition-colors duration-300"
+                  className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-semibold text-sm tracking-wider transition-colors duration-300"
                 >
                   Learn More
                   <svg
