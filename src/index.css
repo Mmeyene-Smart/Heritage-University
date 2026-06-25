@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Futuristic Grid Background Pattern */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.08) 1px, transparent 1px);
+}
+
+/* Cyber Scanning Line overlay */
+.bg-scanline {
+  background: linear-gradient(
+    rgba(15, 23, 42, 0) 50%, 
+    rgba(15, 23, 42, 0.25) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* Ken Burns slow panning zoom animation */
+@keyframes kenburns {
+  0% {
+    transform: scale(1.03) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.10) translate(-1%, -0.8%);
+  }
+  100% {
+    transform: scale(1.03) translate(0, 0);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenburns 28s ease-in-out infinite;
+}
+
+/* Floating animation for glowing blurred lights */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -50px) scale(1.12);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.92);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.animate-float-slow {
+  animation: float 18s infinite ease-in-out;
+}
+
+.animate-float-delayed {
+  animation: float 22s infinite ease-in-out;
+  animation-delay: -5s;
+}
+
+/* Custom scrolling page layout style */
+body {
+  overflow-x: hidden;
+  background-color: #020617; /* slate-950 */
+}
+
+/* Animated shine sweep for gold separator lines */
+@keyframes shine {
+  0% {
+    transform: translateX(-150%) skewX(-12deg);
+  }
+  50% {
+    transform: translateX(150%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(150%) skewX(-12deg);
+  }
+}
+
+.animate-shine-slow {
+  animation: shine 4.5s infinite ease-in-out;
+}
