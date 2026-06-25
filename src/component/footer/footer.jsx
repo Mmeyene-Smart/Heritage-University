@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/realogo.jpeg";
 
 function Footer() {
   const [isVisible, setIsVisible] = useState(false);
