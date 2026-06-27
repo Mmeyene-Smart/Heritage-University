@@ -11,7 +11,7 @@ const navItems = [
   "Fees"
 ];
 
-function Navbar() {
+function Navbar({ activePage, setActivePage }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -43,7 +43,13 @@ function Navbar() {
         }`}
       >
         {/* Logo and University Name - Starts 100px from left on large screens */}
-        <div className="flex items-center gap-3 mr-[10px] group cursor-pointer">
+        <div 
+          onClick={() => {
+            setActivePage("Home");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="flex items-center gap-3 mr-[10px] group cursor-pointer"
+        >
           <img 
             src={logo} 
             alt="Heritage University" 
@@ -57,15 +63,28 @@ function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex">
           <ul className="flex items-center gap-6 xl:gap-8 text-blue-900 font-semibold text-sm tracking-wide">
-            {navItems.map((item) => (
-              <li 
-                key={item}
-                className="relative cursor-pointer transition-colors duration-300 py-2 whitespace-nowrap text-blue-900/80 hover:text-blue-900 group"
-              >
-                {item}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activePage === item;
+              return (
+                <li 
+                  key={item}
+                  onClick={() => {
+                    setActivePage(item);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className={`relative cursor-pointer transition-all duration-350 py-2 whitespace-nowrap font-semibold text-sm tracking-wide transition-colors ${
+                    isActive 
+                      ? "text-blue-600 font-bold" 
+                      : "text-blue-900/80 hover:text-blue-900"
+                  } group`}
+                >
+                  {item}
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}></span>
+                </li>
+              );
+            })}
             <li>
               <button className="relative overflow-hidden bg-[#E0D442] text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-[0_4px_12px_rgba(30,58,138,0.2)] hover:shadow-[0_6px_20px_rgba(245,158,11,0.35)] hover:scale-105 active:scale-95 hover:bg-blue-400 hover:text-blue-900 transition-all duration-300 whitespace-nowrap cursor-pointer">
                 Apply Now
@@ -93,19 +112,31 @@ function Navbar() {
         }`}
       >
         <ul className="flex flex-col items-center text-blue-900 font-semibold text-sm space-y-1 px-6">
-          {navItems.map((item, index) => (
-            <li 
-              key={item}
-              style={{
-                transitionDelay: isOpen ? `${index * 50}ms` : "0ms",
-              }}
-              className={`w-full text-center hover:bg-blue-50/80 py-3 rounded transition-all duration-500 ease-out cursor-pointer transform ${
-                isOpen ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
-              }`}
-            >
-              {item}
-            </li>
-          ))}
+          {navItems.map((item, index) => {
+            const isActive = activePage === item;
+            return (
+              <li 
+                key={item}
+                style={{
+                  transitionDelay: isOpen ? `${index * 50}ms` : "0ms",
+                }}
+                onClick={() => {
+                  setActivePage(item);
+                  setIsOpen(false);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className={`w-full text-center py-3 rounded transition-all duration-500 ease-out cursor-pointer transform ${
+                  isOpen ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
+                } ${
+                  isActive 
+                    ? "bg-blue-50 text-blue-600 font-bold" 
+                    : "hover:bg-blue-50/80 text-blue-900/80"
+                }`}
+              >
+                {item}
+              </li>
+            );
+          })}
           <li 
             style={{
               transitionDelay: isOpen ? `${navItems.length * 50}ms` : "0ms",

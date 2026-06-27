@@ -1,0 +1,120 @@
+/* Page entry animations */
+.about-fade-in {
+  animation: aboutFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes aboutFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Grid background specifically for the about page */
+.about-grid-pattern {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+}
+
+/* Pulsing blue glow animation */
+@keyframes pulse-glow-blue {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.3), 0 0 30px rgba(37, 99, 235, 0.15);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.6), 0 0 45px rgba(37, 99, 235, 0.3);
+    transform: scale(1.1);
+  }
+}
+
+.animate-glow-blue {
+  animation: pulse-glow-blue 3s infinite ease-in-out;
+}
+
+/* Pulsing white glow animation */
+@keyframes pulse-glow-white {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25), 0 0 30px rgba(255, 255, 255, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+}
+
+.animate-glow-white {
+  animation: pulse-glow-white 3.5s infinite ease-in-out;
+}
+
+/* Animated scanning wave for the timeline */
+@keyframes timeline-wave {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+.animate-timeline-wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, rgba(56, 189, 248, 0.5), rgba(255, 255, 255, 0.7), rgba(56, 189, 248, 0.5), transparent);
+  animation: timeline-wave 6s infinite linear;
+}
+
+/* Shimmer Sweep Animation */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(150%) skewX(-15deg);
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 3s infinite ease-in-out;
+}
+
+/* Floating blue orb slow movement */
+@keyframes float-blue-orb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-30px, 40px) scale(1.15);
+    opacity: 0.35;
+  }
+}
+
+.animate-float-blue {
+  animation: float-blue-orb 15s infinite ease-in-out;
+}
+
+/* Floating white orb slow movement */
+@keyframes float-white-orb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1.1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(45px, -35px) scale(0.9);
+    opacity: 0.25;
+  }
+}
+
+.animate-float-white {
+  animation: float-white-orb 18s infinite ease-in-out;
+}
